@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Successful</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 50px;
+        }
+        .box {
+            background: white;
+            display: inline-block;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            background: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        a:hover { background: #e68a00; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>✅ Order Confirmed!</h1>
+        <p>Thank you, <strong>{{ order.name }}</strong>.</p>
+        <p>Your order ID is <strong>#{{ order.id }}</strong></p>
+        <a href="{% url 'home' %}">Continue Shopping</a>
+    </div>
+
+</body>
+</html>

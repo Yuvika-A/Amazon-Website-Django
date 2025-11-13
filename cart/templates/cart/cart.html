@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Amazon Clone</title>
+    <style>
+        /* 🌐 Global Styles */
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            color: #111;
+        }
+
+        h1 {
+            text-align: center;
+            color: #232f3e;
+            margin: 30px 0;
+        }
+
+        /* 🛒 Cart Table */
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #232f3e;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .quantity-controls a {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #ff9900;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .quantity-controls a:hover {
+            background-color: #f0c14b;
+            color: #111;
+        }
+
+        .remove-btn {
+            background: #c40000;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .remove-btn:hover {
+            background: #a30000;
+        }
+
+        .total {
+            text-align: right;
+            margin: 20px 5% 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        /* 🟧 Action Buttons */
+        .actions {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .actions a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .checkout {
+            background-color: #ff9900;
+        }
+
+        .checkout:hover {
+            background-color: #f0c14b;
+            color: #111;
+        }
+
+        .continue {
+            background-color: #232f3e;
+        }
+
+        .continue:hover {
+            background-color: #37475a;
+        }
+
+        /* 📱 Responsive Design */
+        @media (max-width: 900px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                margin: 15px 0;
+                padding: 15px;
+            }
+
+            td {
+                border: none;
+                text-align: left;
+                padding: 10px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 14px;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                flex: 1;
+                text-transform: capitalize;
+            }
+
+            td img {
+                width: 70px;
+                height: 70px;
+                margin-right: 15px;
+            }
+
+            .quantity-controls a {
+                padding: 6px 12px;
+            }
+
+            .total {
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            .actions a {
+                width: 80%;
+                display: block;
+                margin: 10px auto;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Your Shopping Cart</h1>
+
+    {% if products %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td data-label="Product">{{ product.name }}</td>
+                    <td data-label="Image">
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                            No image
+                        {% endif %}
+                    </td>
+                    <td data-label="Price">₹{{ product.price }}</td>
+                    <td data-label="Quantity" class="quantity-controls">
+                        <a href="{% url 'decrease_quantity' product.id %}">−</a>
+                        {{ product.quantity }}
+                        <a href="{% url 'increase_quantity' product.id %}">+</a>
+                    </td>
+                    <td data-label="Total">₹{{ product.total_price }}</td>
+                    <td data-label="Action">
+                        <a href="{% url 'remove_item' product.id %}" class="remove-btn">Remove</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="total">Total: ₹{{ total }}</div>
+
+        <div class="actions">
+            <a href="{% url 'checkout' %}" class="checkout">Proceed to Checkout</a>
+            <a href="{% url 'home' %}" class="continue">Continue Shopping</a>
+        </div>
+    {% else %}
+        <p style="text-align:center; margin-top:50px; font-size:1.2em;">Your cart is empty.</p>
+        <div class="actions">
+            <a href="{% url 'home' %}" class="continue">Go to Store</a>
+        </div>
+    {% endif %}
+
+</body>
+</html>

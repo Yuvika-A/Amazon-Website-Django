@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }} - Amazon Clone</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f8f8f8;
+            margin: 40px;
+            color: #111;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: auto;
+        }
+        img {
+            width: 350px;
+            height: 350px;
+            object-fit: contain;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+        .details {
+            text-align: left;
+            width: 100%;
+        }
+        .price {
+            font-size: 22px;
+            color: #B12704;
+            font-weight: bold;
+        }
+        button, a.button {
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 18px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover, a.button:hover {
+            background-color: #f0c14b;
+            color: #111;
+        }
+        .review-section {
+            margin-top: 50px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .review {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            text-align: left;
+        }
+        .review p { margin: 5px 0; }
+        .related {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .related .product {
+            width: 200px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 10px;
+            text-align: center;
+        }
+        .related img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center;">{{ product.name }}</h1>
+
+    <div class="container">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        {% endif %}
+        <div class="details">
+            <p class="price">₹{{ product.price }}</p>
+            <p>{{ product.description }}</p>
+
+            {% if avg_rating %}
+                <p>⭐ Average Rating: {{ avg_rating|floatformat:1 }}/5</p>
+            {% endif %}
+
+            <a href="{% url 'add_to_cart' product.id %}" class="button">🛒 Add to Cart</a>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="review-section">
+        <h2>Customer Reviews ({{ reviews.count }})</h2>
+
+        {% for review in reviews %}
+            <div class="review">
+                <p><strong>{{ review.user.username }}</strong> rated ⭐ {{ review.rating }}/5</p>
+                <p>{{ review.comment }}</p>
+                <small>{{ review.created_at|date:"M d, Y" }}</small>
+            </div>
+        {% empty %}
+            <p>No reviews yet. Be the first to review!</p>
+        {% endfor %}
+
+        {% if user.is_authenticated %}
+            <hr>
+            <h3>Leave a Review</h3>
+            <form method="POST" action="{% url 'add_review' product.id %}">
+                {% csrf_token %}
+                <label>Rating:</label>
+                <input type="number" name="rating" min="1" max="5" required><br><br>
+                <textarea name="comment" placeholder="Write your review..." rows="3" cols="50" required></textarea><br><br>
+                <button type="submit">Submit Review</button>
+            </form>
+        {% else %}
+            <p><a href="{% url 'login' %}">Login</a> to add a review.</p>
+        {% endif %}
+    </div>
+
+    <!-- Related Products Section -->
+    {% if related_products %}
+    <div class="review-section">
+        <h2>You Might Also Like</h2>
+
+        <div class="related">
+            {% for item in related_products %}
+                <div class="product">
+                    <a href="{% url 'product_detail' item.id %}" style="text-decoration: none; color: #111;">
+                        {% if item.image %}
+                            <img src="{{ item.image.url }}" alt="{{ item.name }}">
+                        {% endif %}
+                        <h4>{{ item.name }}</h4>
+                        <p>₹{{ item.price }}</p>
+                    </a>
+                    <a href="{% url 'add_to_cart' item.id %}" class="button">🛒 Add</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <br>
+    <div style="text-align:center;">
+        <a href="{% url 'home' %}">← Back to Store</a>
+    </div>
+
+</body>
+</html>

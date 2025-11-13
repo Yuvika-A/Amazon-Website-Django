@@ -1,0 +1,252 @@
+{% load static %}
+{% load store_extras %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Clone</title>
+
+<style>
+/* ---------------- GLOBAL ---------------- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f8f8f8;
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+    background:#232f3e;
+    color:white;
+    padding:15px 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:nowrap; /* Keep on same row */
+}
+
+h1{
+    text-align: center;
+}
+header h2 {
+    margin:0;
+    white-space:nowrap;
+}
+
+/* Search bar box */
+.search-box {
+    background:white;
+    padding:6px 12px;
+    border-radius:40px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    flex:1;              /* expands nicely */
+    max-width:500px;     /* fixed desktop width */
+}
+
+/* Search input */
+.search-box input {
+    flex:1;
+    border:none;
+    outline:none;
+    padding:10px;
+    border-radius:40px;
+    background:transparent;
+}
+
+/* Dropdown */
+.search-box select {
+    border:none;
+    padding:10px;
+    border-radius:40px;
+    min-width:120px;
+    outline:none;
+}
+
+/* Filter button */
+.search-box button {
+    background:#ff9900;
+    padding:10px 18px;
+    border:none;
+    color:white;
+    border-radius:40px;
+    cursor:pointer;
+    font-weight:bold;
+    white-space:nowrap;
+}
+.search-box button:hover {
+    background:#f0c14b;
+    color:#111;
+}
+
+/* User links */
+.user-links {
+    white-space:nowrap;
+}
+.user-links a {
+    color:#ff9900;
+    text-decoration:none;
+    font-weight:bold;
+    margin-left:10px;
+}
+
+/* ---- MOBILE HEADER FIX ---- */
+@media (max-width: 900px) {
+    header {
+        flex-direction:column;
+        text-align:center;
+        gap:12px;
+    }
+    .search-box {
+        width:100%;
+        max-width:100%;
+    }
+    .user-links {
+        width:100%;
+        text-align:center;
+    }
+}
+
+/* ---------------- PRODUCT GRID ---------------- */
+.product-container {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding:20px;
+    max-width:1200px;
+    margin: 0 auto;
+    justify-content: center; 
+    box-sizing: border-box;
+}
+
+/* Product card */
+.product {
+    width:260px;
+    box-sizing: border-box;
+    background:white;
+    padding:16px;
+    border: radius 10px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+.product img {
+    width:100%;
+    height:180px;
+    object-fit:contain;
+    border-radius:10px;
+    background:#fafafa;
+}
+
+/* Cart button */
+.cart-button {
+    background:#ff9900;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-top:10px;
+    font-weight:bold;
+    display:block;
+}
+.cart-button:hover {
+    background:#f0c14b;
+    color:#111;
+}
+
+/* Fix cart button on mobile */
+@media(max-width:600px){
+    .cart-button{
+        width:90%;
+        margin:auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ---------------- HEADER ---------------- -->
+<header>
+    <h2>Amazon Clone</h2>
+
+    <form method="get" action="{% url 'home' %}" class="search-box">
+        <input type="text" name="q" placeholder="Search products..." value="{{ query }}">
+        <select name="category">
+            <option value="">All Categories</option>
+            {% for cat in categories %}
+                <option value="{{ cat.id }}" {% if cat.id == selected_category %}selected{% endif %}>
+                    {{ cat.name }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Filter</button>
+    </form>
+
+    <div class="user-links">
+        {% if user.is_authenticated %}
+            👋 <strong>{{ user.username }}</strong> |
+            <a href="{% url 'order_history' %}">📜 My Orders</a> |
+            <a href="{% url 'logout' %}">Logout</a> |
+            <a href="{% url 'view_cart' %}">🛒 Cart ({{ cart_count }})</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a> |
+            <a href="{% url 'signup' %}">Sign Up</a> |
+            <a href="{% url 'view_cart' %}">🛒 Cart ({{ cart_count }})</a>
+        {% endif %}
+    </div>
+</header>
+
+<h1>Explore Products</h1>
+
+<!-- ---------------- PRODUCT GRID ---------------- -->
+<div class="product-container">
+
+{% for product in products %}
+    <div class="product">
+
+        <a href="{% url 'product_detail' product.id %}">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" />
+            {% else %}
+                <img src="{% static 'default.png' %}">
+            {% endif %}
+        </a>
+
+        <h3>{{ product.name }}</h3>
+        <p class="price">₹{{ product.price }}</p>
+
+        {% with reviews=product.reviews.all %}
+            {% if reviews.count > 0 %}
+                {% with avg=reviews|average:"rating" %}
+                    <p class="stars">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= avg|floatformat:0 %}★{% else %}☆{% endif %}
+                        {% endfor %}
+                        ({{ avg|floatformat:1 }}/5)
+                    </p>
+                {% endwith %}
+            {% else %}
+                <p class="stars">☆☆☆☆☆ (No reviews yet)</p>
+            {% endif %}
+        {% endwith %}
+
+        <p>{{ product.description|truncatechars:60 }}</p>
+
+        <a href="{% url 'add_to_cart' product.id %}" class="cart-button">Add to Cart</a>
+    </div>
+{% endfor %}
+
+</div>
+</body>
+</html>

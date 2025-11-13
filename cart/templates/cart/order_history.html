@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Orders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 40px;
+        }
+        h1 {
+            text-align: center;
+            color: #232f3e;
+        }
+        .order-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            padding: 20px;
+            width: 70%;
+        }
+        .order-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ff9900;
+        }
+        .order-items {
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        .order-item {
+            margin: 5px 0;
+            color: #444;
+        }
+        .total {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #232f3e;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🧾 My Order History</h1>
+
+    {% if orders %}
+        {% for order in orders %}
+            <div class="order-card">
+                <div class="order-header">
+                    Order #{{ order.id }} — {{ order.created_at|date:"M d, Y H:i" }}
+                </div>
+                <p><strong>Delivered To:</strong> {{ order.name }}</p>
+                <p><strong>Email:</strong> {{ order.email }}</p>
+                <div class="order-items">
+                    {% for item in order.items.all %}
+                        <div class="order-item">
+                            {{ item.product.name }} × {{ item.quantity }} — ₹{{ item.price }} 
+                            = ₹{{ item.get_total }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <p class="total">Total: ₹{{ order.total }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p style="text-align:center;">You haven’t placed any orders yet.</p>
+    {% endif %}
+
+    <p style="text-align:center; margin-top:30px;">
+        <a href="{% url 'home' %}">← Back to Store</a>
+    </p>
+
+</body>
+</html>

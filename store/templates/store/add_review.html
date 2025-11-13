@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leave a Review</title>
+    <style>
+        body { font-family: Arial; background-color: #f8f8f8; text-align: center; margin: 40px; }
+        form { display: inline-block; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        input, textarea, select { margin: 10px 0; width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc; }
+        button { padding: 10px 20px; background-color: #ff9900; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #f0c14b; color: #111; }
+    </style>
+</head>
+<body>
+    <h1>Leave a Review for {{ product.name }}</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label>Rating:</label>
+        <select name="rating" required>
+            <option value="5">⭐ 5 - Excellent</option>
+            <option value="4">⭐ 4 - Good</option>
+            <option value="3">⭐ 3 - Average</option>
+            <option value="2">⭐ 2 - Poor</option>
+            <option value="1">⭐ 1 - Terrible</option>
+        </select>
+
+        <label>Comment:</label>
+        <textarea name="comment" placeholder="Write your review..." rows="4"></textarea>
+
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <br><br>
+    <a href="{% url 'product_detail' product.id %}">← Back to Product</a>
+</body>
+</html>
