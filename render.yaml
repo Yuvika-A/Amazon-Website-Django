@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: amazon-clone
+    env: python
+    region: ohio
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn amazon_clone.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: amazon_clone.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.10
