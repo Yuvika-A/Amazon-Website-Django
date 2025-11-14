@@ -1,1 +1,356 @@
-[{"model": "store.category", "pk": 1, "fields": {"name": "Electronics"}}, {"model": "store.category", "pk": 2, "fields": {"name": "Books"}}, {"model": "store.category", "pk": 3, "fields": {"name": "Fashion"}}, {"model": "store.category", "pk": 4, "fields": {"name": "Home & Kitchen"}}, {"model": "store.product", "pk": 1, "fields": {"category": 1, "name": "iPhone 15 Pro Max", "description": "The iPhone 15 Pro Max is a smartphone with a 6.7-inch Super Retina XDR display, an A17 Pro chip, and a Pro camera system featuring a 48MP main camera and a 12MP 5x telephoto camera.", "price": "60945.00", "image": "products/iphone_15_pro_max_3sVUYDt.jpg", "created_at": "2025-11-12T08:03:57.205Z"}}, {"model": "store.product", "pk": 2, "fields": {"category": 1, "name": "iPhone 16 Pro Max", "description": "The iPhone 16 Pro Max is a premium smartphone with a large 6.9-inch Super Retina XDR display, a titanium design, and the powerful A18 Pro chip", "price": "89050.00", "image": "products/iphone_16_pro_max.jpg", "created_at": "2025-11-12T08:03:57.205Z"}}, {"model": "store.product", "pk": 3, "fields": {"category": 1, "name": "iPhone 17 Pro Max", "description": "The iPhone 17 Pro Max features a 6.9-inch Super Retina XDR display, the A19 Pro chip, and a pro camera system with all 48MP rear cameras and 8x optical-quality zoom.", "price": "129000.00", "image": "products/iphone_17_pro_max.jpg", "created_at": "2025-11-12T08:03:57.205Z"}}, {"model": "store.product", "pk": 4, "fields": {"category": 1, "name": "iPhone 14", "description": "The iPhone 14 is a 6.1-inch smartphone with a Super Retina XDR display, the A15 Bionic chip, and an advanced dual-camera system.", "price": "38000.00", "image": "products/iphone_14.jpg", "created_at": "2025-11-12T08:03:57.205Z"}}, {"model": "store.product", "pk": 5, "fields": {"category": 1, "name": "iPhone 15", "description": "The iPhone 15 is a 6.1-inch smartphone featuring a Super Retina XDR display with the Dynamic Island, the A16 Bionic chip, and a 48MP main camera.", "price": "50000.00", "image": "products/iphone_15.jpg", "created_at": "2025-11-12T08:03:57.205Z"}}, {"model": "store.product", "pk": 6, "fields": {"category": 1, "name": "iPhone 16", "description": "The iPhone 16 features a new A18 chip optimized for AI, an updated camera system with a 48MP main camera and improved ultrawide lens, and support for Wi-Fi 7.", "price": "55000.00", "image": "products/iphone_16.jpg", "created_at": "2025-11-12T08:03:57.205Z"}}, {"model": "store.product", "pk": 7, "fields": {"category": 2, "name": "It Ends with Us", "description": "The story follows florist Lily Bloom, whose abusive relationship with neurosurgeon Ryle Kincaid is compounded when her high school boyfriend Atlas Corrigan re-enters her life. It explores themes of domestic violence and emotional abuse.", "price": "353.00", "image": "products/Olivia_Song.jfif", "created_at": "2025-11-12T11:28:50.803Z"}}, {"model": "store.product", "pk": 8, "fields": {"category": 2, "name": "It Starts with Us", "description": "Lily and her ex-husband, Ryle, have just settled into a civil coparenting rhythm when she suddenly bumps into her first love, Atlas, again. After nearly two years separated, she is elated that for once, time is on their side, and she immediately says yes when Atlas asks her on a date.", "price": "420.00", "image": "products/It_Starts_With_Us.jfif", "created_at": "2025-11-12T11:29:48.983Z"}}, {"model": "store.product", "pk": 9, "fields": {"category": 2, "name": "Remainders of Him", "description": "After serving five years in prison for a tragic mistake, Kenna Rowan returns to the town where it all went wrong, hoping to reunite with her four-year-old daughter. But the bridges Kenna burned are proving impossible to rebuild.", "price": "345.00", "image": "products/Reminders_of_Him__A_Novel.jfif", "created_at": "2025-11-12T11:31:40.504Z"}}, {"model": "store.product", "pk": 10, "fields": {"category": 2, "name": "Ugly Love", "description": "Ugly Love is about a no-strings-attached sexual relationship between Tate Collins and airline pilot Miles Archer that becomes complicated when they start to develop genuine feelings. Miles proposes the arrangement with two rules: never ask about his past and don't expect a future", "price": "278.00", "image": "products/download.jfif", "created_at": "2025-11-12T11:33:54.935Z"}}, {"model": "store.product", "pk": 11, "fields": {"category": 4, "name": "Philips Air fryer", "description": "The Philips 2000 Series 6.2L Digital Air Fryer combines style and functionality with its sleek black design and advanced Rapid Air Technology. With a power consumption of 1700 watts, it offers efficient cooking for family meals.", "price": "9399.00", "image": "products/PHILIPS_AIRFRYER.jfif", "created_at": "2025-11-12T11:40:28.950Z"}}, {"model": "store.product", "pk": 12, "fields": {"category": 4, "name": "Philips 2 Toaster", "description": "Philips Essentials Collection 1000 Series 2-Slice Toaster - Perfectly Toasted, Every Time Enjoy crispy, golden toast just the way you like it with the Philips Essentials Collection 1000 Series Toaster.", "price": "2690.00", "image": "products/Philips_Essentials_Collection_1000_Series_2_Slice_Toaster.jfif", "created_at": "2025-11-12T11:41:53.896Z"}}, {"model": "store.product", "pk": 13, "fields": {"category": 4, "name": "Vintage-Inspired Dressing Table", "description": "Travel back in time with elaborate handles and carved wood. Select an oval antique mirror, distressed brown vanity, and brass hardware.", "price": "20950.00", "image": "products/Vintage-Inspired_Dressing_Table_Arrangement.jfif", "created_at": "2025-11-12T11:50:26.143Z"}}, {"model": "store.product", "pk": 14, "fields": {"category": 4, "name": "Burrard 83.5\" Sofa - Forest Green", "description": "The Burrard Ottoman has all the clean-lined goodness of the sofa series, but can go anywhere. Whether you’re looking for a matchy solution for your sitting space.", "price": "26950.00", "image": "products/Burrard_83_5__Sofa_-_Forest_Green.jfif", "created_at": "2025-11-12T11:54:03.479Z"}}, {"model": "store.product", "pk": 15, "fields": {"category": 4, "name": "LG F4X1008NMK 8kg Load, 1400 Spin Washing Machine", "description": "Machine is designed to treat your clothes to a new level of care. LG's 6 Motion technology moves the drum in several ways to suit different programs and clothes, helping to keep your clothes looking great for longer.", "price": "45900.00", "image": "products/LG_F4X1008NMK_8kg_Load_1400_SpinWashing_Machine_-_Slate_Grey.jfif", "created_at": "2025-11-12T11:57:02.788Z"}}, {"model": "store.product", "pk": 16, "fields": {"category": 4, "name": "Sony 55 Inch BRAVIA 3 4K HDR Google TV", "description": "Screen Size 55 Inch Connectivity Wi-Fi 6e Upscaling 4K Smart TV Google TV   Description Sony 55 Inch BRAVIA 3 4K HDR Google TV K55S30 Made smart. Made easy. Latest smart features all in one.", "price": "63000.00", "image": "products/Sony_55_Inch_BRAVIA_3_4K_HDR_Google_TV_K55S30___Costco_Au___.jfif", "created_at": "2025-11-12T11:58:22.702Z"}}, {"model": "store.product", "pk": 17, "fields": {"category": 3, "name": "Van Heusen Women Polyester", "description": "Elevate your everyday look with the Van Heusen Women Polyester Regular Fit Solid Casual Shirt. Crafted from soft, breathable polyester, this half-sleeve shirt blends comfort with timeless style.", "price": "1999.00", "image": "products/Van_Heusen_Women_Polyester_Regular_Fit_Solid_Half_Sleeve_Casual_Shirt.png", "created_at": "2025-11-12T12:09:20.643Z"}}, {"model": "store.product", "pk": 18, "fields": {"category": 3, "name": "Women Baggy Jeans", "description": "Unique product with stretchable jeans for Women || Baggy Jeans, Comfortable Quality knitted with stylish Design.This Jeans are Loose Fit to provide you more comforts for any movements, Accurate to wear it in the Office, Casual Parties.", "price": "999.00", "image": "products/download_1.jfif", "created_at": "2025-11-12T12:15:55.992Z"}}, {"model": "store.product", "pk": 19, "fields": {"category": 3, "name": "Beige Ruched Floral Chiffon V Neck Sleeveless A-Line Midi Daytime Dress", "description": "Elevate your look with Fehaute's Beige Midi Dress. Its Morden Ruched design ensures you stand out at Daytime events. Get your exclusive styles and show effortless elegance now.", "price": "1900.00", "image": "products/Beige_Ruched_Floral_Chiffon_V_Neck_Sleeveless_A-Line_Midi_Daytime_Dress.jfif", "created_at": "2025-11-12T12:17:26.464Z"}}, {"model": "store.product", "pk": 20, "fields": {"category": 3, "name": "Kids Indian Ethnic Wear", "description": "Embrace the joy of growing up in our curated collection of enchanting Indian ethnic and party wear for kids aged 0-15. Crafted with care in India, loved by families worldwide.", "price": "3350.00", "image": "products/Little_Muffet__Shop_Online_For_Kids_Indian_Ethnic_Wear__Party_Dresses.jfif", "created_at": "2025-11-12T12:19:27.730Z"}}, {"model": "store.product", "pk": 21, "fields": {"category": 3, "name": "Black Cesia Metallic Accent Shoulder Bag", "description": "With a minimalist design, the Cesia sleek and clean-lined silhouette makes it a chic and classy bag -- it is great for both casual days out and special occasions.", "price": "6500.00", "image": "products/Black_Cesia_Metallic_Accent_Shoulder_Bag___CHARLES__KEITH.jfif", "created_at": "2025-11-12T12:21:32.656Z"}}, {"model": "store.product", "pk": 22, "fields": {"category": 3, "name": "H&M Women's Sandals", "description": "H&M block-heeled sling back sandals in black", "price": "3700.00", "image": "products/HM_Womens_Sandals.jfif", "created_at": "2025-11-12T12:23:46.791Z"}}, {"model": "store.order", "pk": 1, "fields": {"user": 1, "name": "yuvika", "email": "yuvika@gmail.com", "address": "No:109,F1,Labour Colony,Pallikaranai,Ch-100", "total": "160803.00", "created_at": "2025-11-14T09:48:39.727Z"}}, {"model": "store.orderitem", "pk": 1, "fields": {"order": 1, "product": 2, "quantity": 1, "price": "89050.00"}}, {"model": "store.orderitem", "pk": 2, "fields": {"order": 1, "product": 7, "quantity": 1, "price": "353.00"}}, {"model": "store.orderitem", "pk": 3, "fields": {"order": 1, "product": 16, "quantity": 1, "price": "63000.00"}}, {"model": "store.orderitem", "pk": 4, "fields": {"order": 1, "product": 19, "quantity": 1, "price": "1900.00"}}, {"model": "store.orderitem", "pk": 5, "fields": {"order": 1, "product": 21, "quantity": 1, "price": "6500.00"}}]
+[
+{
+  "model": "store.category",
+  "pk": 1,
+  "fields": {
+    "name": "Electronics"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 2,
+  "fields": {
+    "name": "Books"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 3,
+  "fields": {
+    "name": "Fashion"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 4,
+  "fields": {
+    "name": "Home & Kitchen"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "iPhone 15 Pro Max",
+    "description": "The iPhone 15 Pro Max is a smartphone with a 6.7-inch Super Retina XDR display, an A17 Pro chip, and a Pro camera system featuring a 48MP main camera and a 12MP 5x telephoto camera.",
+    "price": "60945.00",
+    "image": "products/iphone_15_pro_max_3sVUYDt.jpg",
+    "created_at": "2025-11-12T08:03:57.205Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "iPhone 16 Pro Max",
+    "description": "The iPhone 16 Pro Max is a premium smartphone with a large 6.9-inch Super Retina XDR display, a titanium design, and the powerful A18 Pro chip",
+    "price": "89050.00",
+    "image": "products/iphone_16_pro_max.jpg",
+    "created_at": "2025-11-12T08:03:57.205Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name": "iPhone 17 Pro Max",
+    "description": "The iPhone 17 Pro Max features a 6.9-inch Super Retina XDR display, the A19 Pro chip, and a pro camera system with all 48MP rear cameras and 8x optical-quality zoom.",
+    "price": "129000.00",
+    "image": "products/iphone_17_pro_max.jpg",
+    "created_at": "2025-11-12T08:03:57.205Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "name": "iPhone 14",
+    "description": "The iPhone 14 is a 6.1-inch smartphone with a Super Retina XDR display, the A15 Bionic chip, and an advanced dual-camera system.",
+    "price": "38000.00",
+    "image": "products/iphone_14.jpg",
+    "created_at": "2025-11-12T08:03:57.205Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "name": "iPhone 15",
+    "description": "The iPhone 15 is a 6.1-inch smartphone featuring a Super Retina XDR display with the Dynamic Island, the A16 Bionic chip, and a 48MP main camera.",
+    "price": "50000.00",
+    "image": "products/iphone_15.jpg",
+    "created_at": "2025-11-12T08:03:57.205Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 6,
+  "fields": {
+    "category": 1,
+    "name": "iPhone 16",
+    "description": "The iPhone 16 features a new A18 chip optimized for AI, an updated camera system with a 48MP main camera and improved ultrawide lens, and support for Wi-Fi 7.",
+    "price": "55000.00",
+    "image": "products/iphone_16.jpg",
+    "created_at": "2025-11-12T08:03:57.205Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 7,
+  "fields": {
+    "category": 2,
+    "name": "It Ends with Us",
+    "description": "The story follows florist Lily Bloom, whose abusive relationship with neurosurgeon Ryle Kincaid is compounded when her high school boyfriend Atlas Corrigan re-enters her life. It explores themes of domestic violence and emotional abuse.",
+    "price": "353.00",
+    "image": "products/Olivia_Song.jfif",
+    "created_at": "2025-11-12T11:28:50.803Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 8,
+  "fields": {
+    "category": 2,
+    "name": "It Starts with Us",
+    "description": "Lily and her ex-husband, Ryle, have just settled into a civil coparenting rhythm when she suddenly bumps into her first love, Atlas, again. After nearly two years separated, she is elated that for once, time is on their side, and she immediately says yes when Atlas asks her on a date.",
+    "price": "420.00",
+    "image": "products/It_Starts_With_Us.jfif",
+    "created_at": "2025-11-12T11:29:48.983Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 9,
+  "fields": {
+    "category": 2,
+    "name": "Remainders of Him",
+    "description": "After serving five years in prison for a tragic mistake, Kenna Rowan returns to the town where it all went wrong, hoping to reunite with her four-year-old daughter. But the bridges Kenna burned are proving impossible to rebuild.",
+    "price": "345.00",
+    "image": "products/Reminders_of_Him__A_Novel.jfif",
+    "created_at": "2025-11-12T11:31:40.504Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 10,
+  "fields": {
+    "category": 2,
+    "name": "Ugly Love",
+    "description": "Ugly Love is about a no-strings-attached sexual relationship between Tate Collins and airline pilot Miles Archer that becomes complicated when they start to develop genuine feelings. Miles proposes the arrangement with two rules: never ask about his past and don't expect a future",
+    "price": "278.00",
+    "image": "products/download.jfif",
+    "created_at": "2025-11-12T11:33:54.935Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 11,
+  "fields": {
+    "category": 4,
+    "name": "Philips Air fryer",
+    "description": "The Philips 2000 Series 6.2L Digital Air Fryer combines style and functionality with its sleek black design and advanced Rapid Air Technology. With a power consumption of 1700 watts, it offers efficient cooking for family meals.",
+    "price": "9399.00",
+    "image": "products/PHILIPS_AIRFRYER.jfif",
+    "created_at": "2025-11-12T11:40:28.950Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 12,
+  "fields": {
+    "category": 4,
+    "name": "Philips 2 Toaster",
+    "description": "Philips Essentials Collection 1000 Series 2-Slice Toaster - Perfectly Toasted, Every Time Enjoy crispy, golden toast just the way you like it with the Philips Essentials Collection 1000 Series Toaster.",
+    "price": "2690.00",
+    "image": "products/Philips_Essentials_Collection_1000_Series_2_Slice_Toaster.jfif",
+    "created_at": "2025-11-12T11:41:53.896Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 13,
+  "fields": {
+    "category": 4,
+    "name": "Vintage-Inspired Dressing Table",
+    "description": "Travel back in time with elaborate handles and carved wood. Select an oval antique mirror, distressed brown vanity, and brass hardware.",
+    "price": "20950.00",
+    "image": "products/Vintage-Inspired_Dressing_Table_Arrangement.jfif",
+    "created_at": "2025-11-12T11:50:26.143Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 14,
+  "fields": {
+    "category": 4,
+    "name": "Burrard 83.5\" Sofa - Forest Green",
+    "description": "The Burrard Ottoman has all the clean-lined goodness of the sofa series, but can go anywhere. Whether you’re looking for a matchy solution for your sitting space.",
+    "price": "26950.00",
+    "image": "products/Burrard_83_5__Sofa_-_Forest_Green.jfif",
+    "created_at": "2025-11-12T11:54:03.479Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 15,
+  "fields": {
+    "category": 4,
+    "name": "LG F4X1008NMK 8kg Load, 1400 Spin Washing Machine",
+    "description": "Machine is designed to treat your clothes to a new level of care. LG's 6 Motion technology moves the drum in several ways to suit different programs and clothes, helping to keep your clothes looking great for longer.",
+    "price": "45900.00",
+    "image": "products/LG_F4X1008NMK_8kg_Load_1400_SpinWashing_Machine_-_Slate_Grey.jfif",
+    "created_at": "2025-11-12T11:57:02.788Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 16,
+  "fields": {
+    "category": 4,
+    "name": "Sony 55 Inch BRAVIA 3 4K HDR Google TV",
+    "description": "Screen Size 55 Inch Connectivity Wi-Fi 6e Upscaling 4K Smart TV Google TV   Description Sony 55 Inch BRAVIA 3 4K HDR Google TV K55S30 Made smart. Made easy. Latest smart features all in one.",
+    "price": "63000.00",
+    "image": "products/Sony_55_Inch_BRAVIA_3_4K_HDR_Google_TV_K55S30___Costco_Au___.jfif",
+    "created_at": "2025-11-12T11:58:22.702Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 17,
+  "fields": {
+    "category": 3,
+    "name": "Van Heusen Women Polyester",
+    "description": "Elevate your everyday look with the Van Heusen Women Polyester Regular Fit Solid Casual Shirt. Crafted from soft, breathable polyester, this half-sleeve shirt blends comfort with timeless style.",
+    "price": "1999.00",
+    "image": "products/Van_Heusen_Women_Polyester_Regular_Fit_Solid_Half_Sleeve_Casual_Shirt.png",
+    "created_at": "2025-11-12T12:09:20.643Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 18,
+  "fields": {
+    "category": 3,
+    "name": "Women Baggy Jeans",
+    "description": "Unique product with stretchable jeans for Women || Baggy Jeans, Comfortable Quality knitted with stylish Design.This Jeans are Loose Fit to provide you more comforts for any movements, Accurate to wear it in the Office, Casual Parties.",
+    "price": "999.00",
+    "image": "products/download_1.jfif",
+    "created_at": "2025-11-12T12:15:55.992Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 19,
+  "fields": {
+    "category": 3,
+    "name": "Beige Ruched Floral Chiffon V Neck Sleeveless A-Line Midi Daytime Dress",
+    "description": "Elevate your look with Fehaute's Beige Midi Dress. Its Morden Ruched design ensures you stand out at Daytime events. Get your exclusive styles and show effortless elegance now.",
+    "price": "1900.00",
+    "image": "products/Beige_Ruched_Floral_Chiffon_V_Neck_Sleeveless_A-Line_Midi_Daytime_Dress.jfif",
+    "created_at": "2025-11-12T12:17:26.464Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 20,
+  "fields": {
+    "category": 3,
+    "name": "Kids Indian Ethnic Wear",
+    "description": "Embrace the joy of growing up in our curated collection of enchanting Indian ethnic and party wear for kids aged 0-15. Crafted with care in India, loved by families worldwide.",
+    "price": "3350.00",
+    "image": "products/Little_Muffet__Shop_Online_For_Kids_Indian_Ethnic_Wear__Party_Dresses.jfif",
+    "created_at": "2025-11-12T12:19:27.730Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 21,
+  "fields": {
+    "category": 3,
+    "name": "Black Cesia Metallic Accent Shoulder Bag",
+    "description": "With a minimalist design, the Cesia sleek and clean-lined silhouette makes it a chic and classy bag -- it is great for both casual days out and special occasions.",
+    "price": "6500.00",
+    "image": "products/Black_Cesia_Metallic_Accent_Shoulder_Bag___CHARLES__KEITH.jfif",
+    "created_at": "2025-11-12T12:21:32.656Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 22,
+  "fields": {
+    "category": 3,
+    "name": "H&M Women's Sandals",
+    "description": "H&M block-heeled sling back sandals in black",
+    "price": "3700.00",
+    "image": "products/HM_Womens_Sandals.jfif",
+    "created_at": "2025-11-12T12:23:46.791Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "name": "yuvika",
+    "email": "yuvika@gmail.com",
+    "address": "No:109,F1,Labour Colony,Pallikaranai,Ch-100",
+    "total": "160803.00",
+    "created_at": "2025-11-14T09:48:39.727Z"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "product": 2,
+    "quantity": 1,
+    "price": "89050.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 2,
+  "fields": {
+    "order": 1,
+    "product": 7,
+    "quantity": 1,
+    "price": "353.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 3,
+  "fields": {
+    "order": 1,
+    "product": 16,
+    "quantity": 1,
+    "price": "63000.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 4,
+  "fields": {
+    "order": 1,
+    "product": 19,
+    "quantity": 1,
+    "price": "1900.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 5,
+  "fields": {
+    "order": 1,
+    "product": 21,
+    "quantity": 1,
+    "price": "6500.00"
+  }
+}
+]
